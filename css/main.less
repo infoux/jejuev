@@ -1,0 +1,115 @@
+/* main - default */
+body {
+  .main {
+    .issue {
+      background: url("../images/main.jpg") no-repeat center / cover;
+      .rem(height, 273);
+      .center;
+      @media all and (min-width: 1200px) {
+        height: 696px;
+      }
+
+      .container {
+        color: @white;
+
+        h2 {
+          .rem(font-size, 20);
+          .rem(margin-top, 118);
+          .text-shadow();
+          @media all and (min-width: 1200px) {
+            font-size: 46px;
+            margin-top: 254px;
+          }
+
+          small {
+            .relative;
+            .rem(margin-top, 30);
+            .block;
+            .rem(font-size, 10);
+            .normal;
+            @media all and (min-width: 1200px) {
+              font-size: 18px;
+              margin-top: 80px;
+            }
+
+            &::before {
+              content: "";
+              .block;
+              .absolute;
+              left: 50%;
+              .rem(top, -16);
+              .rem(width, 40);
+              .rem(margin-left, -20);
+              .rem(height, 3);
+              background: @yellow-dark;
+              @media all and (min-width: 1200px) {
+                height: 6px;
+                top: -43px;
+              }
+            }
+
+            p {
+              .rem(margin, 0 0 4);
+
+              span {
+                .block;
+                .rem(margin, 0 0 4);
+                @media all and (min-width: 1200px) {
+                  .inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .notice {
+      .container {
+        background: @blue;
+        color: @white;
+        .rem(padding, 10);
+
+        h2 {
+          .inline-block;
+          .rem(font-size, 11);
+          color: @blue-dark;
+          .rem(margin, 0 0 6);
+        }
+
+        ul {
+          .nolist;
+          .mapazero;
+
+          li {
+            .relative;
+            .rem(font-size, 13);
+            width: 100%;
+
+            a {
+              .block;
+              color: @white;
+              .rem(padding-right, 90);
+              .ellipse;
+
+              i {
+                .inline-block;
+                .absolute;
+                .right;
+                right: 0;
+                .rem(font-size, 11);
+                .rem(width, 800);
+                font-style: normal;
+                .opacity(0.6);
+              }
+            }
+          }
+        }
+
+        .bx-controls-direction {
+          .none;
+        }
+      }
+    }
+  }
+}

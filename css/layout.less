@@ -1,0 +1,265 @@
+/* layout - default */
+body {
+  .container {
+    .container(100%);
+    @media all and (min-width: 1200px) {
+      .container(1200px);
+    }
+  }
+
+  &.menu-on {
+    .fixed;
+    .full-position;
+    overflow: hidden;
+  }
+
+  #header {
+    .inline-block;
+    .absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    .rem(height, 40);
+    .center;
+    @media all and (min-width: 1200px) {
+      height: 110px;
+      .accordion-h;
+
+      &.hover {
+        height: 240px;
+        .accordion-h;
+        background: rgba(0,0,0,0.8);
+
+        nav {
+          .main-menu {
+            li {
+              ul {
+                .block;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .container {
+      .menuToggle {
+        .block;
+        .absolute;
+        .rem(right, 10);
+        .rem(top, 12);
+        font-size: 0;
+        color: @white;
+
+        i {
+          .rem(font-size, 18);
+        }
+        @media all and (min-width: 1200px) {
+          .none;
+        }
+      }
+
+      h1 {
+        .inline-block;
+        .absolute;
+        .rem(left, 10);
+        .rem(top, -4);
+        .rem(width, 152);
+        .rem(height, 46);
+        background: @logo;
+        font-size: 0;
+
+        a {
+          .block;
+          height: 100%;
+        }
+        @media all and (min-width: 1200px) {
+          width: 298px;
+          height: 90px;
+        }
+      }
+    }
+
+    nav {
+      .none;
+      @media all and (min-width: 1200px) {
+        .block;
+        .absolute;
+        top: 40px;
+        left: 50%;
+        margin-left: -220px;
+
+        .main-menu {
+          .mapazero;
+          .zero;
+
+          li {
+            .inline-block;
+            .top;
+
+            h2 {
+              .mapazero;
+
+              a {
+                color: @white;
+                font-size: 20px;
+                padding: 0 34px;
+              }
+            }
+
+            ul {
+              .none;
+              .mapazero;
+              margin-top: 20px;
+              .left;
+
+              li {
+                .block;
+                font-size: 14px;
+                border-left: 1px solid @gray-60;
+
+                a {
+                  .block;
+                  color: @gray-96;
+                  padding: 5px 0 5px 10px;
+                  letter-spacing: -1px;
+                }
+              }
+            }
+          }
+        }
+
+        .close {
+          .none;
+        }
+      }
+      @media all and (max-width: 1199px) {
+        .fixed;
+        .full-position;
+        z-index: 999;
+        background: rgba(0,0,0,0.8);
+
+        .main-menu {
+          .remCalc(width, 80);
+          .absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          .mapazero;
+          background: @white;
+          .left;
+          overflow-y: scroll;
+          .nolist;
+
+          li {
+            h2 {
+              margin: 0;
+
+              a {
+                .block;
+                height: 100%;
+                .rem(padding, 10);
+                .rem(font-size, 14);
+              }
+            }
+
+            ul {
+              .none;
+              .nolist;
+              .mapazero;
+              .rem(font-size, 12);
+              background: @gray-96;
+              border-top: 1px solid @gray-90;
+              .rem(padding, 10);
+
+              li {
+                .rem(padding, 6);
+              }
+            }
+
+            &.active {
+              ul {
+                .block;
+              }
+            }
+          }
+
+          & > li {
+            border-bottom: 1px solid @gray-90;
+          }
+
+          &::before {
+            content: "제주전기자동차서비스";
+            .block;
+            .rem(padding, 20 10);
+            .bold;
+            .rem(font-size, 20);
+            border-bottom: 1px solid @gray-90;
+          }
+        }
+      }
+
+      .close {
+        .absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        .rem(width, 80);
+        border: none;
+        .zero;
+        background: transparent;
+      }
+    }
+  }
+
+  #footer {
+    .center;
+
+    .container {
+      .left;
+      color: @gray-60;
+      .rem(padding, 0 10);
+      @media all and (min-width: 1200px) {
+        .inline-block;
+        font-size: 14px;
+        padding: 20px 0;
+      }
+
+      h2 {
+        .rem(font-size, 18);
+        @media all and (min-width: 1200px) {
+          .inline-block;
+          .top;
+          font-size: 0;
+          width: 196px;
+          height: 58px;
+          background: url("../images/logo-footer.png") no-repeat center / 100%;
+        }
+      }
+
+      address {
+        font-style: normal;
+        .rem(font-size, 10);
+        @media all and (min-width: 1200px) {
+          .inline-block;
+          font-size: 14px;
+          padding: 20px 0 0 30px;
+        }
+
+        p {
+          .rem(margin, 0 0 10);
+
+          span {
+            .block;
+            .rem(margin, 0 0 4);
+            @media all and (min-width: 1200px) {
+              .inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
