@@ -1,8 +1,7 @@
 // out: ./style.css, sourcemap: false, compress: true
 @import "normalize.css";
 @import "rem.less";
-@import "fontello.css";
-/* function */
+@import "fontello.css"; /* function */
 /* nanum square - regular */
 @font-face {
   font-family: 'NanumSquare';
@@ -38,7 +37,7 @@
 @yellow: #ffff00;
 @yellow-dark: #ffcc00;
 @orange: #f68409;
-@green: #199d54;
+@green: #99cc00;
 @border-normal: 1px solid #eee;
 /* mixin */
 .bold {
@@ -450,4 +449,14 @@ body {
   margin: 0;
   overflow: visible;
   clip: auto;
+}
+
+.ctt_admin {
+  a {
+    .block;
+    .center;
+    .rem(padding, 10);
+    background: @blue;
+    color: @white;
+  }
 }

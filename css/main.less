@@ -65,16 +65,42 @@ body {
     }
 
     .notice {
+      @media all and (min-width: 1200px) {
+        .relative;
+      }
+
       .container {
         background: @blue;
         color: @white;
         .rem(padding, 10);
+        @media all and (min-width: 1200px) {
+          .absolute;
+          left: 50%;
+          top: -60px;
+          margin-left: -600px;
+          height: 60px;
+          font-size: 0;
+          line-height: 40px;
+          padding: 10px 20px;
+        }
 
         h2 {
           .inline-block;
           .rem(font-size, 11);
           color: @blue-dark;
           .rem(margin, 0 0 6);
+          @media all and (min-width: 1200px) {
+            .inline-block;
+            .top;
+            font-size: 18px;
+            width: 150px;
+          }
+        }
+        @media all and (min-width: 1200px) {
+          .bx-wrapper {
+            .inline-block;
+            width: calc(~"100% - 150px") !important;
+          }
         }
 
         ul {
@@ -84,7 +110,10 @@ body {
           li {
             .relative;
             .rem(font-size, 13);
-            width: 100%;
+            width: 100% !important;
+            @media all and (min-width: 1200px) {
+              font-size: 16px;
+            }
 
             a {
               .block;
@@ -108,6 +137,89 @@ body {
 
         .bx-controls-direction {
           .none;
+        }
+      }
+    }
+
+    .banner {
+      .center;
+
+      .container {
+        .left;
+        .top;
+
+        ul {
+          .mapazero;
+          .nolist;
+          .zero;
+
+          li {
+            .relative;
+            .rem(font-size, 12);
+            @media all and (min-width: 1200px) {
+              .inline-block;
+              .top;
+              width: calc(~"100% / 3");
+            }
+
+            a {
+              .block;
+              .relative;
+              z-index: 10;
+              .rem(height, 180);
+              color: @gray-20;
+              .rem(padding, 20);
+              @media all and (min-width: 1200px) {
+                height: 220px;
+                padding: 30px;
+              }
+
+              h3 {
+                .rem(font-size, 28);
+                .rem(margin, 0 0 20);
+                @media all and (min-width: 1200px) {
+                  font-size: 32px;
+                  margin: 0 0 32px;
+                }
+              }
+
+              p {
+                .rem(margin, 0 0 4);
+              }
+            }
+
+            i {
+              .absolute;
+              right: 0;
+              top: 0;
+              color: @white;
+              .rem(border-width, 20);
+              border-style: solid;
+              border-color: @green;
+              border-bottom-color: transparent;
+              border-left-color: transparent;
+
+              &::before {
+                .absolute;
+                .rem(right, -14);
+                .rem(top, -14);
+                .rem(font-size, 16);
+                margin: 0;
+              }
+            }
+
+            &.product {
+              background: url("../images/mainBanner01.png") #f4f4f4 no-repeat right center / auto 100%;
+            }
+
+            &.charger {
+              background: url("../images/mainBanner02.png") #e2e2e2 no-repeat right center / auto 100%;
+            }
+
+            &.membership {
+              background: url("../images/mainBanner03.png") #f4f4f4 no-repeat right center / auto 100%;
+            }
+          }
         }
       }
     }
