@@ -12,9 +12,9 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 
 <article id="content" class="sub">
-  <section class="head">
+  <section class="head s<?php echo substr($me_code,  0, 2); ?>">
     <div class="container">
-      <h2><?php echo $board['bo_subject'] ?><small class="sr-only">목록</small></h2>
+      <h2><?php echo $board['bo_subject'] ?><small class="sr-only">내용</small></h2>
     </div>
   </section>
 
@@ -23,29 +23,32 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
   <section class="board">
     <div class="container">
 
-
-
-
-
 <!-- 게시물 읽기 시작 { -->
 
-<article id="bo_v" style="width:<?php echo $width; ?>">
-    <header>
-        <h1 id="bo_v_title">
+<div class="board_view">
+
+        <h3 class="title">
             <?php
             if ($category_name) echo $view['ca_name'].' | '; // 분류 출력 끝
             echo cut_str(get_text($view['wr_subject']), 70); // 글제목 출력
             ?>
-        </h1>
-    </header>
+        </h3>
 
-    <section id="bo_v_info">
-        <h2>페이지 정보</h2>
+
+    <ul class="view_info">
+      <li>
         작성자 <strong><?php echo $view['name'] ?><?php if ($is_ip_view) { echo "&nbsp;($ip)"; } ?></strong>
-        <span class="sound_only">작성일</span><strong><?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong>
+      </li>
+      <li>
+          <span class="sr-only">작성일</span><strong><?php echo date("y-m-d H:i", strtotime($view['wr_datetime'])) ?></strong>
+      </li>
+      <li>
         조회<strong><?php echo number_format($view['wr_hit']) ?>회</strong>
+      </li>
+      <li>
         댓글<strong><?php echo number_format($view['wr_comment']) ?>건</strong>
-    </section>
+      </li>
+    </ul>
 
     <?php
     if ($view['file']['count']) {
@@ -59,8 +62,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
     <?php if($cnt) { ?>
     <!-- 첨부파일 시작 { -->
-    <section id="bo_v_file">
-        <h2>첨부파일</h2>
+    <div class="file">
+        <h4>첨부파일</h4>
         <ul>
         <?php
         // 가변 파일
@@ -81,7 +84,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         }
          ?>
         </ul>
-    </section>
+    </div>
     <!-- } 첨부파일 끝 -->
     <?php } ?>
 
@@ -89,8 +92,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     if ($view['link']) {
      ?>
      <!-- 관련링크 시작 { -->
-    <section id="bo_v_link">
-        <h2>관련링크</h2>
+    <div class="link">
+        <h4 class="sr-only">관련링크</h4>
         <ul>
         <?php
         // 링크
@@ -112,14 +115,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         }
          ?>
         </ul>
-    </section>
+    </div>
     <!-- } 관련링크 끝 -->
     <?php } ?>
 
 
 
-    <section id="bo_v_atc">
-        <h2 id="bo_v_atc_title">본문</h2>
+    <div class="text">
+        <h4 class="sr-only">본문</h4>
 
         <?php
         // 파일 출력
@@ -129,8 +132,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
             for ($i=0; $i<=count($view['file']); $i++) {
                 if ($view['file'][$i]['view']) {
-                    //echo $view['file'][$i]['view'];
-                    echo get_view_thumbnail($view['file'][$i]['view']);
+                    echo $view['file'][$i]['view'];
+                    //echo get_view_thumbnail($view['file'][$i]['view']);
                 }
             }
 
@@ -145,7 +148,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 
 
 
-    </section>
+    </div>
 
 
     <!-- 게시물 상단 버튼 시작 { -->
@@ -153,12 +156,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         <?php
         ob_start();
          ?>
-        <?php if ($prev_href || $next_href) { ?>
-        <ul class="bo_v_nb">
-            <?php if ($prev_href) { ?><li><a href="<?php echo $prev_href ?>" class="btn_b01">이전글</a></li><?php } ?>
-            <?php if ($next_href) { ?><li><a href="<?php echo $next_href ?>" class="btn_b01">다음글</a></li><?php } ?>
-        </ul>
-        <?php } ?>
 
         <ul class="bo_v_com">
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn_b01">수정</a></li><?php } ?>
@@ -175,15 +172,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     </div>
     <!-- } 게시물 상단 버튼 끝 -->
 
-</article>
-<!-- } 게시판 읽기 끝 -->
 
 
 
 
 </div>
 
-
+</div>
 
   </section>
 

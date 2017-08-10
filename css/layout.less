@@ -22,7 +22,7 @@ body {
     z-index: 999;
     width: 100%;
     background: rgba(0,0,0,0.6);
-    .rem(height, 40);
+    .rem(height, 50);
     .center;
     @media all and (min-width: 1200px) {
       height: 110px;
@@ -50,7 +50,7 @@ body {
         .block;
         .absolute;
         .rem(right, 10);
-        .rem(top, 12);
+        .rem(top, 14);
         font-size: 0;
         color: @white;
 
@@ -79,6 +79,7 @@ body {
         @media all and (min-width: 1200px) {
           width: 298px;
           height: 90px;
+          top: 10px;
         }
       }
     }
@@ -176,7 +177,10 @@ body {
               .rem(padding, 10);
 
               li {
-                .rem(padding, 6);
+                a {
+                  .rem(padding, 6);
+                  .block;
+                }
               }
             }
 
@@ -196,7 +200,7 @@ body {
             .block;
             .rem(padding, 20 10);
             .bold;
-            .rem(font-size, 20);
+            .rem(font-size, 18);
             border-bottom: 1px solid @gray-90;
           }
         }

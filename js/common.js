@@ -67,7 +67,37 @@ $(document).ready(function() {
 
   });
 
+  $(".tabs a").click(function() {
+    var active = $(this).attr("data");
+    $(".tabs a").removeClass("active");
+    $(".tabData").removeClass("active");
 
+    $(this).addClass("active");
+    $(".tabData#" + active).addClass("active");
+
+  });
+
+
+
+    $(".thumb a").click(function() {
+      var active = $(this).attr("data");
+      $(".thumb a").removeClass("active");
+
+      $(this).addClass("active");
+      $(".big img").attr("src",  "/theme/basic/images/pds01-"+ active +".png");
+
+    });
+
+      $(".thumb2 a").click(function() {
+        var active = $(this).attr("data");
+        $(".thumb2 a").removeClass("active");
+        $(".big").removeClass("active");
+
+        $(this).addClass("active");
+
+        $(".b" + active).addClass("active");
+
+        });
 
 
   $(window).resize(function() {

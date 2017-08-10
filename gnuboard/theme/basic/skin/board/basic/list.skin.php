@@ -12,7 +12,7 @@ if ($is_nogood) $colspan++;
 
 
 <article id="content" class="sub">
-  <section class="head">
+  <section class="head s<?php echo substr($me_code,  0, 2); ?>">
     <div class="container">
       <h2><?php echo $board['bo_subject'] ?><small class="sr-only">목록</small></h2>
     </div>

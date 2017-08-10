@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>제주전기자동차서비스</title>
+  <link href="css/style.css" rel="stylesheet">
+  <!-- javaScript  -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery.bxslider.min.js"></script>
+  <script src="js/common.js"></script>
+
+</head>
+
+<body>
+  <!-- S:skip_navi -->
+  <div class="skip_navi"> <a class="sr-only sr-only-focusable" href="#header">메뉴 바로가기</a> <a class="sr-only sr-only-focusable" href="#content">본문 바로가기</a> <a class="sr-only sr-only-focusable" href="#footer">푸터 바로가기</a> </div>
+  <!-- E:skip_navi -->
+  <!-- S:header -->
+  <header id="header">
+    <div class="container">
+      <a href="#" class="menuToggle"><i class="icon-th-list"></i>메뉴토글</a>
+      <h1><a href="">제주전기자동차서비스</a></h1>
+    </div>
+    <!-- S:menu -->
+    <nav id="menu">
+
+      <ul class="main-menu">
+        <li>
+          <h2><a href="">회사소개</a></h2>
+          <ul>
+            <li><a href="">인사말</a></li>
+            <li><a href="">회사개요 및 연혁</a></li>
+            <li><a href="">비전</a></li>
+            <li><a href="">찾아오시는길</a></li>
+          </ul>
+
+        </li>
+        <li>
+          <h2><a href="">제품소개</a></h2>
+          <ul>
+            <li><a href="">충전시스템</a></li>
+            <li><a href="">충전인프라</a></li>
+            <li><a href="">통합운영관리</a></li>
+          </ul>
+
+        </li>
+        <li>
+          <h2><a href="">컨소시엄</a></h2>
+          <ul>
+            <li><a href="">EV컨소시엄</a></li>
+            <li><a href="">포스코ICT</a></li>
+            <li><a href="">중앙제어</a></li>
+            <li><a href="">피엠그로우</a></li>
+            <li><a href="">대경엔지니어링</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2><a href="">참여기관</a></h2>
+          <ul>
+            <li><a href="">참여기관</a></li>
+            <li><a href="">제주사랑렌트카</a></li>
+            <li><a href="">나가사키-에비츠</a></li>
+            <li><a href="">스마트그리드연구센터</a></li>
+            <li><a href="">산학연계망구축사업단</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2><a href="">자료실</a></h2>
+          <ul>
+            <li><a href="">인증현황</a></li>
+            <li><a href="">양해각서</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2><a href="">고객지원</a></h2>
+          <ul>
+            <li><a href="">공지사항</a></li>
+            <li><a href="">담당자안내</a></li>
+            <li><a href="">온라인 문의/상담</a></li>
+            <li><a href="">소식</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="close">창닫기</button>
+    </nav>
+    <!-- E:mmenu -->
+  </header>
+  <!-- E:header -->
+  <!-- S:content -->
+  <article id="content" class="sub">
+    <section class="head">
+      <div class="container">
+        <h2>회사개요 및 연혁</h2>
+      </div>
+    </section>
+    <section class="indicator">
+      <div class="container">
+
+        <ul class="sub">
+          <li>
+            <a href="/" class="home"><i class="icon-home" aria-hidden="true"></i>홈</a>
+          </li>
+          <li>
+            <a>회사소개<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <!-- // -->
+            <div class="sub-menu">
+              <ul>
+                <li><a href="">회사소개</a></li>
+                <li><a href="">제품소개</a></li>
+                <li><a href="">컨소시엄</a></li>
+                <li><a href="">참여기관</a></li>
+                <li><a href="">자료실</a></li>
+                <li><a href="">고객지원</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a>전체<i class="icon-angle-down" aria-hidden="true"></i></a>
+            <!-- // -->
+            <div class="sub-menu">
+              <ul>
+                <li><a href="">인사말</a></li>
+                <li><a href="">회사개요 및 연혁</a></li>
+                <li><a href="">비전</a></li>
+                <li><a href="">찾아오시는 길</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+    <section class="sub-content location">
+      <div class="container">
+
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e7bd9404fc6074d2f10e8e85c052a80c&libraries=services"></script>
+        <div id="map"></div>
+        <script>
+          var container = document.getElementById('map');
+          var options = {
+            center: new daum.maps.LatLng(33.450701, 126.570667),
+            level: 3
+          };
+
+          var map = new daum.maps.Map(container, options);
+
+          // 주소-좌표 변환 객체를 생성합니다
+          var geocoder = new daum.maps.services.Geocoder();
+
+          // 주소로 좌표를 검색합니다
+          geocoder.addressSearch('제주특별자치도 제주시 첨단로 213-3', function(result, status) {
+
+            // 정상적으로 검색이 완료됐으면
+            if (status === daum.maps.services.Status.OK) {
+
+              var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+              // 결과값으로 받은 위치를 마커로 표시합니다
+              var marker = new daum.maps.Marker({
+                map: map,
+                position: coords
+              });
+
+              // 인포윈도우로 장소에 대한 설명을 표시합니다
+              var infowindow = new daum.maps.InfoWindow({
+                content: '<div style="width:150px;text-align:center;padding:6px 0;font-size:14px;overflow:hidden;">스마트빌딩 102호</div>'
+              });
+              infowindow.open(map, marker);
+
+              // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+              map.setCenter(coords);
+            }
+          });
+
+
+
+          // 지도를 표시하는 div 크기를 변경하는 함수입니다
+          function resizeMap() {
+            var mapContainer = document.getElementById('map');
+            mapContainer.style.width = '1180px';
+            mapContainer.style.height = '280px';
+          }
+
+          function relayout() {
+
+            // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+            // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다
+            // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+            map.relayout();
+          }
+        </script>
+
+        <dl>
+          <dt>구주소</dt>
+          <dd>제주특별자치도 제주시 영평동 2170-1</dd>
+          <dt>신주소</dt>
+          <dd>제주특별자치도 제주시 첨단로 213-3</dd>
+        </dl>
+      </div>
+    </section>
+
+  </article>
+  <!-- E:content -->
+  <!-- S:footer -->
+  <footer id="footer">
+    <div class="container">
+      <h2>(주)제주전기자동차서비스</h2>
+
+      <address>
+        <p><span>제주특별자치도 제주시 영평동 2170-1</span> <span>제주첨단과학기술단지 스마트빌딩 102호 대표이사 : 신상희</span> 대표번호 : 064-723-0853 팩스 : 064-723-0859</p>
+        <p><strong>ⓒ JEJU ELECTRIC VEHICLE SERVICE. ALL RIGHTS RESERVED</strong></p>
+        </address>
+    </div>
+  </footer>
+  <!-- E:footer -->
+</body>
+
+</html>

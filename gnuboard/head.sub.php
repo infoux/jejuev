@@ -10,14 +10,10 @@ if(!defined('G5_IS_ADMIN') && defined('G5_THEME_PATH') && is_file(G5_THEME_PATH.
 
 $begin_time = get_microtime();
 
-if (!isset($g5['title'])) {
     $g5['title'] = $config['cf_title'];
     $g5_head_title = $g5['title'];
-}
-else {
-    $g5_head_title = $g5['title']; // 상태바에 표시될 제목
-    $g5_head_title .= " | ".$config['cf_title'];
-}
+
+
 
 // 현재 접속자
 // 게시판 제목에 ' 포함되면 오류 발생
