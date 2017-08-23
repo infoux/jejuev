@@ -77,7 +77,7 @@ include_once(G5_THEME_PATH.'/head.php');
           <i class="icon-plus"></i>
         </li>
         <li class="charger">
-          <a href="">
+          <a href="http://www.ev.or.kr/portalmonitor" target="_blank">
             <h3>CHARGER</h3>
             <p>전기자동차 충전기</p>
             <p>위치 안내</p>
@@ -98,6 +98,10 @@ include_once(G5_THEME_PATH.'/head.php');
 
 </article>
 <!-- E:content -->
+
+
+
+
 
 
 
